@@ -6,4 +6,5 @@ read -p "Enter Input 2 : " b
 read -p "Enter Input 3 : " c
 
 #COMPUTATIONS
-result=$(( $a+$b*$c ))
+result1=$(( $a+$b*$c ))
+result2=$(( $a*$b+$c ))
