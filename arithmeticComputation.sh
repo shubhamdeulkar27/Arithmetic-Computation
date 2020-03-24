@@ -1,3 +1,6 @@
 #!/bin/bash -x
 
-printf "This Program Computes different Arithmetic Expressions and sort the Result"
+read -p "Enter Input 1 : " a
+read -p "Enter Input 2 : " b
+read -p "Enter Input 3 : " c
+
