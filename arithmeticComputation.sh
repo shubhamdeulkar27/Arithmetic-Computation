@@ -13,4 +13,9 @@ results[$(( index++ ))]=$(( $a*$b+$c ))
 results[$(( index++ ))]=$(( $c+$a/$b ))
 results[$(( index++ ))]=$(( $a%$b+$c ))
 
+#STROING RESULTS FROM DICTIONARY TO ARRAY
+for (( i=0 ; i<$index ; i++ ))
+do
+	resultArray[i]=${results[$i]}
+done
 
