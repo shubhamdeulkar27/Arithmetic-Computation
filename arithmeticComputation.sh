@@ -5,7 +5,7 @@ read -p "Enter Input 1 : " a
 read -p "Enter Input 2 : " b
 read -p "Enter Input 3 : " c
 
-#FUNCTION TO SORT ARRAY
+#FUNCTION TO SORT ARRAY IN DESCENDING
 function sortDsc(){
 	array=("$@")
 	for (( i=0 ; i<$(( ${#array[@]}-1 )) ; i++ ))
@@ -20,6 +20,24 @@ function sortDsc(){
 			fi
 		done
 	done
+echo ${array[@]}
+}
+
+#FUNCTION TO SORT ARRAY IN ASCENDING
+function sortAsc(){
+   array=("$@")
+   for (( i=0; i<$(( ${#array[@]}-1 )) ;i++ ))
+   do
+      for (( j=i+1;j<${#array[@]};j++ ))
+      do
+         if (( ${array[$i]}>${array[$j]} ))
+         then
+            temporary=${array[$i]}
+            array[i]=${array[$j]}
+            array[j]=$temporary
+         fi
+      done
+   done
 echo ${array[@]}
 }
 
@@ -38,5 +56,5 @@ do
 done
 
 #SORTING ARRAY
-resultArray=$( sortDsc ${resultArray[@]} )
-echo ${resultArray[@]}
+dscArray=$( sortDsc ${resultArray[@]} )
+ascArray=$(sortAsc ${resultArray[@]})
